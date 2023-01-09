@@ -14,11 +14,9 @@ param location string = resourceGroup().location
 
 @description('The language worker runtime to load in the function app.')
 @allowed([
-  'node'
-  'dotnet'
-  'java'
+  'dotnet-isolated'
 ])
-param runtime string = 'dotnet'
+param runtime string = 'dotnet-isolated'
 
 var functionAppName = appName
 var hostingPlanName = appName
