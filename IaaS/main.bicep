@@ -69,6 +69,7 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: hostingPlan.id
     siteConfig: {
+      linuxFxVersion: 'dotnet-isolated|6.0'
       appSettings: [
         {
           name: 'AzureWebJobsStorage'
