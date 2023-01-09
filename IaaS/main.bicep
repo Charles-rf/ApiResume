@@ -49,26 +49,26 @@ resource container 'Microsoft.Storage/storageAccounts/blobServices/containers@20
 resource hostingPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: hostingPlanName
   location: location
-  kind: 'functionapp'
+  kind: 'functionapp,linux'
   sku: {
     name: 'Y1'
     tier: 'Dynamic'
   }
   properties: {
     reserved: true
+  }
 }
 
 resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
   name: functionAppName
   location: location
-  kind: 'functionapp,linux'
+  kind: 'functionapp'
   identity: {
     type: 'SystemAssigned'
   }
   properties: {
     serverFarmId: hostingPlan.id
     siteConfig: {
-      linuxFxVersion: 'dotnet-isolated|6.0'
       appSettings: [
         {
           name: 'AzureWebJobsStorage'
