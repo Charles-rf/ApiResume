@@ -2,7 +2,7 @@
 
 ## **Architecture Diagram:**
 
-![architectureDiagram](./diagram/apiResumeDiagram.PNG)
+![architectureDiagram](./diagram/resumeDiagram.PNG)
 
 ## **Description**
 This [APP](https://fnappgtmx2f7kdzjgk.azurewebsites.net/api/getCV) is a simple API that allows you to host a resume in the form of a JSON file on the web. It has the following components:
