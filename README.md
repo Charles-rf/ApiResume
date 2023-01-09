@@ -1,4 +1,4 @@
-# JSON resume with Github Actions, Bicep and Azure Functions
+# Resume with Github Actions, Bicep and Azure Functions
 
 ## **Architecture Diagram:**
 
