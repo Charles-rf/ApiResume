@@ -1,5 +1,3 @@
-# apiResume
-
 # JSON resume with Github Actions, Bicep and Azure Functions
 
 ## **Architecture Diagram:**
@@ -34,6 +32,5 @@ There are many potential enhancements that could be made to the API in the futur
 
 * Adding authentication and authorization to protect the resume data
 * Adding more endpoints to allow for more sophisticated interactions with the data
-* Integrating with other services, such as job board APIs or resume parsing libraries
 * Adding a frontend to the app to allow users to view and interact with the resume data more easily
 * Caching layer to the API to improve performance and reduce the load on the Storage Account
