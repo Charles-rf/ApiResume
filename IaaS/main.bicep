@@ -20,7 +20,6 @@ param runtime string = 'dotnet-isolated'
 
 var functionAppName = appName
 var hostingPlanName = appName
-var applicationInsightsName = appName
 var storageAccountName = '${uniqueString(resourceGroup().id)}azfunctions'
 var functionWorkerRuntime = runtime
 
@@ -79,10 +78,6 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
           value: '~4'
         }
         {
-          name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
-          value: applicationInsights.properties.InstrumentationKey
-        }
-        {
           name: 'FUNCTIONS_WORKER_RUNTIME'
           value: functionWorkerRuntime
         }
@@ -91,16 +86,6 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
       minTlsVersion: '1.2'
     }
     httpsOnly: true
-  }
-}
-
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
-  name: applicationInsightsName
-  location: location
-  kind: 'web'
-  properties: {
-    Application_Type: 'web'
-    Request_Source: 'rest'
   }
 }
 
